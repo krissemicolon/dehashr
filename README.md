@@ -1,5 +1,4 @@
 # dehashr - blj projekt von Kris Huber
-----------
 ### Building from source:
 ```
 make
