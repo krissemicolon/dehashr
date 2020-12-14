@@ -8,7 +8,7 @@ make install
 - libgcrypt
 
 #### Installation of libgcrypt:
-Gentoo: ```emerge libgcrypt```
-Void: ```xbps-install libgcrypt```
-Arch: ```pacman -S libgcrypt```
-Debian: ```apt install libgcrypt20```
+Gentoo: ```emerge libgcrypt```\
+Void: ```xbps-install libgcrypt```\
+Arch: ```pacman -S libgcrypt```\
+Debian: ```apt install libgcrypt20```\
