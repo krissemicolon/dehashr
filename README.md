@@ -4,3 +4,11 @@
 make
 make install
 ```
+### Dependencies:\
+- libgcrypt\
+
+#### Installation of libgcrypt:\
+Gentoo: ```emerge libgcrypt```\
+Void: ```xbps-install libgcrypt```\
+Arch: ```pacman -S libgcrypt```\
+Debian: ```apt install libgcrypt20```\
