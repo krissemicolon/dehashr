@@ -11,4 +11,4 @@ make install
 Gentoo: ```emerge libgcrypt```\
 Void: ```xbps-install libgcrypt```\
 Arch: ```pacman -S libgcrypt```\
-Debian: ```apt install libgcrypt20```\
+Debian: ```apt install libgcrypt20```
