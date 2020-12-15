@@ -1,15 +1,27 @@
 CC=gcc
-CFLAGS=-O3 -pipe
+CFLAGS=-march=native -O3 -flto -fno-fat-lto-objects -pipe
+OBJECTS=main.o
 
-make:
-	$(CC) src/main.c -o dehashr $(CFLAGS)
+output: src/main.o src/threads.c src/hashing.o
+	$(CC) src/main.o src/hashing.o -o dehashr $(CFLAGS)
+
+main.o: src/main.c
+	$(CC) -c src/main.c $(CFLAGS)
+
+threads.o: src/threads.c
+	$(CC) -c src/threads.c $(CFLAGS)
+
+hashing.o: src/hashing.c
+	$(CC) -c src/hashing.c $(CFLAGS)
 
 clean:
 	rm -f dehashr
+	rm src/*.o
 
 install:
-	cp -f dehashr /usr/bin
-	chmod +x /usr/bin/dehashr
+	mv dehashr /usr/bin
 
 uninstall:
 	rm -f /usr/bin/dehashr
+
+target: dependencies
