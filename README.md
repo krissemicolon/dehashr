@@ -5,7 +5,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/krissemicolon/dehashr/total?style=plastic)
 
 <p align="center">
-  <img src="res/logo.svg" width="300"/>  
+  <img src="res/logo.svg" width="256"/>  
 </p>
 
 ### Building from source:
