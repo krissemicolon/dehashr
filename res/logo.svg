@@ -121,6 +121,25 @@
          id="feComposite1172"
          in2="offset" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter930">
+      <feGaussianBlur
+         stdDeviation="2.73375 0.01"
+         result="fbSourceGraphic"
+         id="feGaussianBlur928" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix932" />
+      <feGaussianBlur
+         id="feGaussianBlur934"
+         stdDeviation="2.73375 0.01"
+         result="blur"
+         in="fbSourceGraphic" />
+    </filter>
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="0"
@@ -136,11 +155,11 @@
      inkscape:snap-smooth-nodes="false"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-units="mm"
-     inkscape:cy="538.72319"
-     inkscape:cx="-230.2874"
-     inkscape:zoom="1"
+     inkscape:cy="372.05909"
+     inkscape:cx="490.74813"
+     inkscape:zoom="2"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -161,6 +180,7 @@
     </rdf:RDF>
   </metadata>
   <g
+     style="display:inline"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
@@ -216,14 +236,14 @@
        transform="matrix(1.2354654,0,0,1.2354654,-12.836546,-17.265236)" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:28.0184px;line-height:1.25;font-family:sans-serif;fill:#8e99a9;fill-opacity:1;stroke:none;stroke-width:0.700462;"
+       style="font-style:normal;font-weight:normal;font-size:28.0184px;line-height:1.25;font-family:sans-serif;fill:#4f4f4f;fill-opacity:1;stroke:none;stroke-width:0.700462;filter:url(#filter930)"
        x="-0.022422457"
        y="115.2297"
        id="text162"><tspan
          id="tspan160"
          x="-0.022422457"
          y="115.2297"
-         style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:28.0184px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8e99a9;fill-opacity:1;stroke-width:0.700462;"
+         style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:28.0184px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#010101;fill-opacity:1;stroke-width:0.700462"
          sodipodi:role="line">dehashr</tspan></text>
     <rect
        style="opacity:0;fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583"
@@ -232,5 +252,22 @@
        height="13.926447"
        x="0.86200327"
        y="94.650909" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="blur"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:27.9866px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.699665"
+       x="0.093145169"
+       y="115.2297"
+       id="text870"><tspan
+         sodipodi:role="line"
+         id="tspan868"
+         x="0.093145169"
+         y="115.2297"
+         style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:27.9866px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.699665">dehashr</tspan></text>
   </g>
 </svg>
