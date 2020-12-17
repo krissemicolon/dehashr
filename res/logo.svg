@@ -130,9 +130,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="373.11342"
-     inkscape:cy="539.27954"
+     inkscape:zoom="1"
+     inkscape:cx="459.12456"
+     inkscape:cy="450.74539"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -210,14 +210,12 @@
     <text
        transform="matrix(1.2354654,0,0,1.2354654,-12.836546,-17.265236)"
        xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;line-height:1.25;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0b1728;fill-opacity:1;stroke:none;stroke-width:0.578004;filter:url(#filter1148)"
+       style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;line-height:1.25;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:99.9561;fill:#0b1728;fill-opacity:1;stroke:none;stroke-width:0.578004;filter:url(#filter1148)"
        x="10.54816"
        y="106.35495"
        id="text986"><tspan
-         sodipodi:role="line"
-         id="tspan984"
          x="10.54816"
-         y="106.35495"
-         style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0b1728;stroke-width:0.578004">dehashr</tspan></text>
+         y="106.35495"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.578004">dehashr</tspan></tspan></text>
   </g>
 </svg>
