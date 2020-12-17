@@ -131,8 +131,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="459.12456"
-     inkscape:cy="450.74539"
+     inkscape:cx="549.70575"
+     inkscape:cy="277.06092"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -174,7 +174,7 @@
       <path
          sodipodi:type="inkscape:box3dside"
          id="path24"
-         style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1.23547;stroke-linejoin:round;opacity:0"
+         style="opacity:0;fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1.23547;stroke-linejoin:round"
          inkscape:box3dsidetype="11"
          d="M 30.335755,133.60098 122.56574,49.459017 v 86.745823 l -92.229985,38.68571 z"
          points="122.56574,49.459017 122.56574,136.20484 30.335755,174.89055 30.335755,133.60098 " />
@@ -213,9 +213,24 @@
        style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;line-height:1.25;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:99.9561;fill:#0b1728;fill-opacity:1;stroke:none;stroke-width:0.578004;filter:url(#filter1148)"
        x="10.54816"
        y="106.35495"
-       id="text986"><tspan
-         x="10.54816"
-         y="106.35495"><tspan
-           style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:23.1198px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.578004">dehashr</tspan></tspan></text>
+       id="text986" />
+    <text
+       id="text162"
+       y="115.2297"
+       x="-0.022422457"
+       style="font-style:normal;font-weight:normal;font-size:28.0184px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.700462"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:28.0184px;font-family:'BlexMono Nerd Font';-inkscape-font-specification:'BlexMono Nerd Font, Semi-Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e6e6e6;stroke-width:0.700462"
+         y="115.2297"
+         x="-0.022422457"
+         id="tspan160">dehashr</tspan></text>
+    <rect
+       y="94.650909"
+       x="0.86200327"
+       height="13.926447"
+       width="80.114754"
+       id="rect164"
+       style="opacity:0;fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583" />
   </g>
 </svg>
