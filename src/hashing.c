@@ -137,7 +137,7 @@ void stringToMD4() {
         printf("hash=%s\n", hashed);
     }
 
-    void stringToMD5() {
+    void stringToMD5(char *hash) {
         // Lenght of specified Algorithm
         unsigned char digest[128];
         char hashed[32+1] = {0,};
@@ -150,7 +150,7 @@ void stringToMD4() {
         char *inputString = "test";
 
         // Specify algorythm
-        gcry_md_hash_buffer(GCRY_MD_MD5, digest, inputString, strlen(inputString));
+        gcry_md_hash_buffer(GCRY_MD_MD5, digest, hash, strlen(hash));
 
         for (i=0; i < digest_length; i++) {
                 sprintf(hashed+(i*2), "%02x", digest[i]);
@@ -300,7 +300,7 @@ void stringToMD4() {
         for (i=0; i < digest_length; i++) {
                 sprintf(hashed+(i*2), "%02x", digest[i]);
         }
-        printf("hash=%s\n", hashed);
+        /* printf("hash=%s\n", hashed); */
     }
 
     void stringToSHA384() {
@@ -724,8 +724,9 @@ void stringToMD4() {
 }
 
 int main() {
-    stringToSHA3_384();
+    for (int i =0; i < 10000000; i++) {
+        stringToSHA256();
+    }
 
-    return 0;
 }
 
