@@ -4,7 +4,6 @@
 
 int numberOfThreads() {
     int numberOfThreads = (int)sysconf(_SC_NPROCESSORS_CONF);
-
     return numberOfThreads;
 }
 

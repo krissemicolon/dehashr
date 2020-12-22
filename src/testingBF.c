@@ -12,10 +12,6 @@ char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 static void generate(int maxlen);
 
 int main(int argc, char *argv[]) {
-    /* strcat(character, uppercase_alphabet); */
-    /* strcat(character, numbers); */
-    /* strcat(character, special_chars); */
-
     if (argc < 2) {
 	fprintf(stderr, "Usage: %s Length\n", argv[0]);
 	exit(1);

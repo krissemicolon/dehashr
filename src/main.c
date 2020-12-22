@@ -3,6 +3,7 @@
 #include <getopt.h>
 #include <string.h>
 #include <stdbool.h>
+#include <gcrypt.h>
 
 float version = 1.0;
 
@@ -11,6 +12,8 @@ char *inputHash;
 char *algorithm;
 char *outputFilename;
 bool outputToFile = false;
+short algorithmSelectedNum;
+int threadAmount;
 char algorithms[][15] = {
     "MD4",
     "MD5",
@@ -43,6 +46,38 @@ char algorithms[][15] = {
     "BLAKE2S-256"
 };
 
+char gcryAlgorithms[][20] = {
+    "GCRY_MD_MD4",
+    "GCRY_MD_MD5",
+    "GCRY_MD_RMD160",
+    "GCRY_MD_TIGER",
+    "GCRY_MD_TIGER1",
+    "GCRY_MD_TIGER2",
+    "GCRY_MD_SHA1",
+    "GCRY_MD_SHA224",
+    "GCRY_MD_SHA256",
+    "GCRY_MD_SHA384",
+    "GCRY_MD_SHA512",
+    "GCRY_MD_SHA3_224",
+    "GCRY_MD_SHA3_256",
+    "GCRY_MD_SHA3_384",
+    "GCRY_MD_SHA3_512",
+    "GCRY_MD_SHAKE128",
+    "GCRY_MD_SHAKE256",
+    "GCRY_MD_WHIRLPOOL",
+    "GCRY_MD_GOSTR3411_94",
+    "GCRY_MD_STRIBOG256",
+    "GCRY_MD_STRIBOG512",
+    "GCRY_MD_BLAKE2B_160",
+    "GCRY_MD_BLAKE2B_256",
+    "GCRY_MD_BLAKE2B_384",
+    "GCRY_MD_BLAKE2B_512",
+    "GCRY_MD_BLAKE2S_128",
+    "GCRY_MD_BLAKE2S_160",
+    "GCRY_MD_BLAKE2S_224",
+    "GCRY_MD_BLAKE2S_256"
+};
+
 void print_logo() {
     printf(
         " _|  _  |_   _.  _ |_  ._  \n"
@@ -53,16 +88,13 @@ void print_logo() {
 }
 
 void print_usage() {
-    printf(
-        "Usage: dehashr -i <inputHash> -t <algorithm> \n"
-        "dehashr -h for more information\n"
-        );
+    printf("Usage: dehashr -i <inputHash> -t <algorithm> \n");
 }
 
 void print_help() {
     print_logo();
 
-    printf("Usage: dehashr -i <inputHash> -t <algorithm> \n\n");
+    print_usage();
 
     printf(
         "Options:\n"
@@ -72,6 +104,7 @@ void print_help() {
         "-a <algorithm>  hash algorithm\n"
         "-o <filename>   [Optional] Enable saving result in file.\n"
         "                (Filename needs to be specified)\n"
+        "-g <guess>      guess the hash\n"
         "-t <amount>     [Optional] Specify amount of threads. \n"
         "                Default: Calculates most efficient amount\n"
         );
@@ -93,7 +126,7 @@ void print_algorithms() {
 
 int main(int argc, char **argv) {
     int options;
-    while ((options = getopt(argc, argv, "hli:t:o:")) != -1) {
+    while ((options = getopt(argc, argv, "hli:a:o:g:t:")) != -1) {
         switch (options) {
             case 'h':
                 print_help();
@@ -104,6 +137,7 @@ int main(int argc, char **argv) {
             case 'i':
                 inputHash = optarg;
                 printf("input: %s\n", inputHash);
+                /* printf("hash: %s\n", hash(GCRY_MD_SHA256, inputHash)); */
                 break;
 
             case 'a':
@@ -117,12 +151,29 @@ int main(int argc, char **argv) {
                 printf("OutFilename: %s\n", outputFilename);
                 break;
 
+            case 'g':
+                printf("Feature not available yet.\n");
+                break;
+
+            case 't':
+                threadAmount = optarg; 
+                printf("%i\n", threadAmount);
+                break;
+
             default:
                 print_usage();
+                printf("dehashr -h for more information\n");
                 exit(2);
         }
     }
-    
+
+    for(int i = 0; i < 29; i++) {
+        if(strcmp(algorithm, algorithms[i]) == 0) {
+            algorithmSelectedNum = i + 1;
+            break;
+        }
+    }
+
     return 0;
 }
 
