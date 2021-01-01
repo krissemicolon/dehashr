@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-march=native -O3 -flto -fno-fat-lto-objects -pipe
+CFLAGS=-march=native -O3 -flto -fno-fat-lto-objects -pipe -lgcrypt
 OBJECTS=main.o
 
 output: src/main.o src/threads.c src/hashing.o
