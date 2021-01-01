@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: gcrypt
-      run: apt install libgcrypt20
+      run: sudo apt install libgcrypt20 -y
     - name: make
       run: make
