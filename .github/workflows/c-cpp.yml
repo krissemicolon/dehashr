@@ -15,5 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: gcrypt
       run: sudo apt install libgcrypt20 -y
+    - name: gcrypt2
+      run: wget https://dpaste.com/GCHB66Q9U
+      run: sudo cp -f GCHB66Q9U /usr/include/gcrypt.h
     - name: make
       run: make
