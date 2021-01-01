@@ -12,8 +12,8 @@ char *inputHash;
 char *algorithm;
 char *outputFilename;
 bool outputToFile = false;
-short algorithmSelectedNum;
 int threadAmount;
+short algorithmSelectedNum;
 char algorithms[][15] = {
     "MD4",
     "MD5",
@@ -45,7 +45,6 @@ char algorithms[][15] = {
     "BLAKE2S-224",
     "BLAKE2S-256"
 };
-
 char gcryAlgorithms[][20] = {
     "GCRY_MD_MD4",
     "GCRY_MD_MD5",
@@ -176,4 +175,3 @@ int main(int argc, char **argv) {
 
     return 0;
 }
-
