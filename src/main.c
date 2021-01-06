@@ -77,51 +77,11 @@ char gcryAlgorithms[][20] = {
     "GCRY_MD_BLAKE2S_256"
 };
 
-void print_logo() {
-    printf(
-        " _|  _  |_   _.  _ |_  ._  \n"
-        "(_| (/_ | | (_| _> | | |  v%0.1f\n"
-        "Performant Hash-Cracker\n\n",
-        version
-    );
-}
-
-void print_usage() {
-    printf("Usage: dehashr -i <inputHash> -t <algorithm> \n");
-}
-
-void print_help() {
-    print_logo();
-
-    print_usage();
-
-    printf(
-        "Options:\n"
-        "-h              Print the help page\n"
-        "-l              list all available inputHashing algorithms\n" 
-        "-i <inputHash>  inputHash\n"
-        "-a <algorithm>  hash algorithm\n"
-        "-o <filename>   [Optional] Enable saving result in file.\n"
-        "                (Filename needs to be specified)\n"
-        "-g <guess>      guess the hash\n"
-        "-t <amount>     [Optional] Specify amount of threads. \n"
-        "                Default: Calculates most efficient amount\n"
-        );
-
-    exit(0);
-}
-
-void print_algorithms() {
-    print_logo();
-
-    printf("Hashing Algorithms:\n");
-
-    for (int i = 0; i < 29; i++) {
-        printf("%s\n", algorithms[i]);
-    }
-
-    exit(0);
-}
+// Prototypes
+void print_logo(void);
+void print_usage(void);
+void print_help(void);
+void print_algorithms(void);
 
 int main(int argc, char **argv) {
     int options;
@@ -174,4 +134,54 @@ int main(int argc, char **argv) {
     }
 
     return 0;
+}
+
+// --------------------------------------------
+// CLI Functions
+// --------------------------------------------
+
+void print_logo() {
+    printf(
+        " _|  _  |_   _.  _ |_  ._  \n"
+        "(_| (/_ | | (_| _> | | |  v%0.1f\n"
+        "Performant Hash-Cracker\n\n",
+        version
+    );
+}
+
+void print_usage() {
+    printf("Usage: dehashr -i <inputHash> -t <algorithm> \n");
+}
+
+void print_help() {
+    print_logo();
+
+    print_usage();
+
+    printf(
+        "Options:\n"
+        "-h              Print the help page\n"
+        "-l              list all available inputHashing algorithms\n" 
+        "-i <inputHash>  inputHash\n"
+        "-a <algorithm>  hash algorithm\n"
+        "-o <filename>   [Optional] Enable saving result in file.\n"
+        "                (Filename needs to be specified)\n"
+        "-g <guess>      guess the result\n"
+        "-t <amount>     [Optional] Specify amount of threads. \n"
+        "                Default: Calculates most efficient amount\n"
+        );
+
+    exit(0);
+}
+
+void print_algorithms() {
+    print_logo();
+
+    printf("Hashing Algorithms:\n");
+
+    for (int i = 0; i < 29; i++) {
+        printf("%s\n", algorithms[i]);
+    }
+
+    exit(0);
 }

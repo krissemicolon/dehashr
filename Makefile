@@ -1,9 +1,8 @@
 CC=gcc
 CFLAGS=-march=native -O3 -flto -fno-fat-lto-objects -pipe -lgcrypt
-OBJECTS=main.o
 
-output: src/main.o src/threads.c src/hashing.o
-	$(CC) src/threads.c src/hashing.o src/main.o -o dehashr $(CFLAGS)
+compile: src/main.o src/threads.o src/hashing.o
+	$(CC) src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS)
 
 main.o: src/main.c
 	$(CC) $(CFLAGS) -c src/main.c
