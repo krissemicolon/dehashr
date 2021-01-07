@@ -9,27 +9,15 @@ char numbers[] = "0123456789";
 char special_chars[] = "!@#$%^&*.,;:-_(){}[]";
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*.,;:-_(){}[]";
 
-/*
- * Generates all patterns of the alphabet up to maxlen in length.  This
- * function uses a buffer that holds alphaLen^3 patterns at a time.
- * One pattern of length 5 would be "aaaaa\n".  The reason that alphaLen^3
- * patterns are used is because we prepopulate the buffer with the last 3
- * letters already set to all possible combinations.  So for example,
- * the buffer initially looks like "aaaaa\naaaab\naaaac\n ... aa999\n".  Then
- * on every iteration, we write() the buffer out, and then increment the
- * fourth to last letter.  So on the first iteration, the buffer is modified
- * to look like "abaaa\nabaab\nabaac\n ... ab999\n".  This continues until
- * all combinations of letters are exhausted.
- */
-static void generate(int maxlen) {
+void generate(int maxlen) {
     int   alphaLen = strlen(alphabet);
     int   len      = 0;
     char *buffer   = malloc((maxlen + 1) * alphaLen * alphaLen * alphaLen);
     int  *letters  = malloc(maxlen * sizeof(int));
 
     if (buffer == NULL || letters == NULL) {
-	fprintf(stderr, "Not enough memory.\n");
-	exit(1);
+		fprintf(stderr, "Not enough memory.\n");
+		exit(1);
     }
 
     // This for loop generates all 1 letter patterns, then 2 letters, etc,
@@ -151,4 +139,3 @@ static void generate(int maxlen) {
     free(letters);
     free(buffer);
 }
-

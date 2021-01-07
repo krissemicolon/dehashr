@@ -126,13 +126,16 @@ int main(int argc, char **argv) {
         }
     }
 
+    generate(4);
+
+/*
     for(int i = 0; i < 29; i++) {
         if(strcmp(algorithm, algorithms[i]) == 0) {
             algorithmSelectedNum = i + 1;
             break;
         }
     }
-
+*/
     return 0;
 }
 
