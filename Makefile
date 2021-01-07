@@ -1,8 +1,8 @@
 CC=gcc
-CFLAGS=-march=native -O3 -flto -fno-fat-lto-objects -pipe -Wall
+CFLAGS=-Wall
 
 compile: src/bruteforce.o src/threads.o src/hashing.o src/main.o
-	$(CC) src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS)
+	$(CC) src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS) -lgcrypt
 
 main.o: src/main.c
 	$(CC) $(CFLAGS) -c src/main.c
@@ -11,7 +11,7 @@ threads.o: src/threads.c
 	$(CC) $(CFLAGS) -c src/threads.c
 
 hashing.o: src/hashing.c
-	$(CC) $(CFLAGS) -c src/hashing.c -lgcrypt
+	$(CC) $(CFLAGS) -c src/hashing.c
 
 bruteforce.o: src/bruteforce.c
 	$(CC) $(CFLAGS) -c src/bruteforce.c
@@ -21,7 +21,7 @@ clean:
 	rm src/*.o
 
 install:
-	mv dehashr /usr/bin
+	mv dehashr /usr/local/bin
 
 uninstall:
-	rm -f /usr/bin/dehashr
+	rm -f /usr/local/bin/dehashr

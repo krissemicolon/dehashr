@@ -95,8 +95,6 @@ int main(int argc, char **argv) {
 
             case 'i':
                 inputHash = optarg;
-                printf("input: %s\n", inputHash);
-                /* printf("hash: %s\n", hash(GCRY_MD_SHA256, inputHash)); */
                 break;
 
             case 'a':
@@ -126,7 +124,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    generate(4);
+    // generate(4);
 
 /*
     for(int i = 0; i < 29; i++) {

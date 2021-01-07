@@ -37,6 +37,7 @@ void generate(int maxlen) {
 		buffer[j++] = alphabet[i];
 		buffer[j++] = '\n';
 	    }
+		
 	    write(STDOUT_FILENO, buffer, bufLen);
 	    continue;
 	} else if (len == 2) {
@@ -55,6 +56,7 @@ void generate(int maxlen) {
 			let0 = 0;
 		}
 	    }
+		
 	    write(STDOUT_FILENO, buffer, bufLen);
 	    continue;
 	}
@@ -89,6 +91,7 @@ void generate(int maxlen) {
 	}
 
 	// Write the first sequence out.
+	
 	write(STDOUT_FILENO, buffer, bufLen);
 
 	// Special case for length 3, we're already done.
@@ -120,6 +123,7 @@ void generate(int maxlen) {
 	    if (letters[i] != 0) {
 		// No wraparound, so we finally finished incrementing.
 		// Write out this set.  Reset i back to second to last letter.
+		
 		write(STDOUT_FILENO, buffer, bufLen);
 		i = len - 4;
 		continue;
@@ -138,4 +142,14 @@ void generate(int maxlen) {
     // Clean up.
     free(letters);
     free(buffer);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+	fprintf(stderr, "Usage: %s Length\n", argv[0]);
+	exit(1);
+    }
+
+    generate(atoi(argv[1]));
+    return 0;
 }

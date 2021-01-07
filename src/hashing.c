@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <gcrypt.h>
 
-char *hash(int algorithm, char *inputString) {
+char *hash(int algorithm, char inputString[]) {
     // Lenght of specified Algorithm
+    // TODO: FIX HARDCODED 256
     unsigned char digest[256];
     char outputHash[32+1] = {0,};
 
@@ -15,8 +16,7 @@ char *hash(int algorithm, char *inputString) {
     for (int i=0; i < digest_length; i++) {
             sprintf(outputHash+(i*2), "%02x", digest[i]);
     }
-    printf("hash=%s\n", outputHash);
+    //printf("hash=%s\n", outputHash);
 
     return outputHash;
 }
-
