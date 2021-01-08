@@ -3,10 +3,10 @@
 #include <string.h>
 #include <unistd.h>
 
-char lowercase_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-char uppercase_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char numbers[] = "0123456789";
-char special_chars[] = "!@#$%^&*.,;:-_(){}[]";
+/* char lowercase_alphabet[] = "abcdefghijklmnopqrstuvwxyz"; */
+/* char uppercase_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; */
+/* char numbers[] = "0123456789"; */
+/* char special_chars[] = "!@#$%^&*.,;:-_(){}[]"; */
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*.,;:-_(){}[]";
 
 void generate(int maxlen) {
@@ -22,7 +22,7 @@ void generate(int maxlen) {
 
     // This for loop generates all 1 letter patterns, then 2 letters, etc,
     // up to the given maxlen.
-    for (len=1;len<=maxlen;len++) {
+    for (len = 1; len <= maxlen; len++) {
 	// The stride is one larger than len because each line has a '\n'.
 	int i;
 	int stride = len+1;
@@ -34,11 +34,12 @@ void generate(int maxlen) {
 	    int j = 0;
 	    bufLen = (len + 1) * alphaLen;
 	    for (i=0;i<alphaLen;i++) {
-		buffer[j++] = alphabet[i];
-		buffer[j++] = '\n';
+            buffer[j++] = alphabet[i];
+            buffer[j++] = '\n';
 	    }
-		
-	    write(STDOUT_FILENO, buffer, bufLen);
+	    	
+        printf("%s\n", buffer);	
+	    /* write(STDOUT_FILENO, buffer, bufLen); */
 	    continue;
 	} else if (len == 2) {
 	    // Also a special case.
@@ -46,18 +47,19 @@ void generate(int maxlen) {
 	    int let1 = 0;
 	    bufLen = (len + 1) * alphaLen * alphaLen;
 	    for (i=0;i<bufLen;i+=stride) {
-		buffer[i]   = alphabet[let0];
-		buffer[i+1] = alphabet[let1++];
-		buffer[i+2] = '\n';
-		if (let1 == alphaLen) {
-		    let1 = 0;
-		    let0++;
-		    if (let0 == alphaLen)
-			let0 = 0;
-		}
+            buffer[i]   = alphabet[let0];
+            buffer[i+1] = alphabet[let1++];
+            buffer[i+2] = '\n';
+            if (let1 == alphaLen) {
+                let1 = 0;
+                let0++;
+                if (let0 == alphaLen)
+                let0 = 0;
+            }
 	    }
-		
-	    write(STDOUT_FILENO, buffer, bufLen);
+	    	
+        printf("%s\n", buffer);	
+	    /* write(STDOUT_FILENO, buffer, bufLen); */
 	    continue;
 	}
 
@@ -72,34 +74,34 @@ void generate(int maxlen) {
 	    int let0 = 0;
 	    int let1 = 0;
 	    int let2 = 0;
-	    for (i=len-3;i<bufLen;i+=stride) {
-		buffer[i]   = alphabet[let0];
-		buffer[i+1] = alphabet[let1];
-		buffer[i+2] = alphabet[let2++];
-		buffer[i+3] = '\n';
-		if (let2 == alphaLen) {
-		    let2 = 0;
-		    let1++;
-		    if (let1 == alphaLen) {
-			let1 = 0;
-			let0++;
+	    for (i = len-3; i < bufLen; i+=stride) {
+			buffer[i]   = alphabet[let0];
+			buffer[i+1] = alphabet[let1];
+			buffer[i+2] = alphabet[let2++];
+			buffer[i+3] = '\n';
+			if (let2 == alphaLen) {
+		    	let2 = 0;
+		    	let1++;
+		    	if (let1 == alphaLen) {
+					let1 = 0;
+					let0++;
 			if (let0 == alphaLen)
 			    let0 = 0;
-		    }
-		}
+		    	}
+			}
 	    }
 	}
 
 	// Write the first sequence out.
-	
-	write(STDOUT_FILENO, buffer, bufLen);
+    printf("%s\n", buffer);	
+	/* write(STDOUT_FILENO, buffer, bufLen); */
 
 	// Special case for length 3, we're already done.
 	if (len == 3)
 	    continue;
 
 	// Set all the letters to 0.
-	for (i=0;i<len;i++)
+	for (i = 0; i < len; i++)
 	    letters[i] = 0;
 
 	// Now on each iteration, increment the the fourth to last letter.
@@ -117,14 +119,15 @@ void generate(int maxlen) {
 
 	    // Set this letter in the proper places in the buffer.
 	    c = alphabet[letters[i]];
-	    for (j=i;j<bufLen;j+=stride)
+	    for (j = i; j < bufLen; j += stride)
 		buffer[j] = c;
 
 	    if (letters[i] != 0) {
 		// No wraparound, so we finally finished incrementing.
 		// Write out this set.  Reset i back to second to last letter.
 		
-		write(STDOUT_FILENO, buffer, bufLen);
+        printf("%s\n", buffer);	
+		/* write(STDOUT_FILENO, buffer, bufLen); */
 		i = len - 4;
 		continue;
 	    }
@@ -146,10 +149,11 @@ void generate(int maxlen) {
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
-	fprintf(stderr, "Usage: %s Length\n", argv[0]);
-	exit(1);
+		fprintf(stderr, "Usage: %s Length\n", argv[0]);
+		exit(1);
     }
 
     generate(atoi(argv[1]));
     return 0;
 }
+
