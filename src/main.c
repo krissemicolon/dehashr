@@ -124,16 +124,32 @@ int main(int argc, char **argv) {
         }
     }
 
-    // generate(4);
+    bool cracked = false;
+    while(cracked == false) {
+        char *bfValue = "demonstration";
 
-/*
-    for(int i = 0; i < 29; i++) {
-        if(strcmp(algorithm, algorithms[i]) == 0) {
-            algorithmSelectedNum = i + 1;
-            break;
+        unsigned char digest[256];
+        char outputHash[32+1] = {0,};
+
+        // Getting the lenght of the specified algorithm
+        int digest_length = gcry_md_get_algo_dlen(GCRY_MD_SHA256);
+
+        // Hashing with selected algorithm
+        gcry_md_hash_buffer(GCRY_MD_SHA256, digest, bfValue, strlen(bfValue));
+
+        for (int i=0; i < digest_length; i++) {
+                sprintf(outputHash+(i*2), "%02x", digest[i]);
+        }
+
+        /* char *generatedHash = hash(GCRY_MD_SHA256, bfValue); */
+        if(strcmp(outputHash, inputHash) == 0) {
+            cracked = true;
+            printf("Hash was successfully cracked\n");
+            printf("Input Hash: %s\n", inputHash);
+            printf("Cracked Value: %s\n", bfValue);
         }
     }
-*/
+
     return 0;
 }
 
