@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
                 break;
 
             case 't':
-                threadAmount = optarg; 
+                threadAmount = atoi(optarg); 
                 printf("%i\n", threadAmount);
                 break;
 
