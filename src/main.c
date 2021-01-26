@@ -5,7 +5,10 @@
 #include <stdbool.h>
 #include <gcrypt.h>
 
-float version = 1.0;
+/* If the compiler fucks up, catch it. */
+#ifndef VERSION
+#define VERSION "Something went wrong with version"
+#endif
 
 // User Input & settings
 char *inputHash;
@@ -144,9 +147,8 @@ int main(int argc, char **argv) {
 void print_logo() {
     printf(
         " _|  _  |_   _.  _ |_  ._  \n"
-        "(_| (/_ | | (_| _> | | |  v%0.1f\n"
-        "Performant Hash-Cracker\n\n",
-        version
+        "(_| (/_ | | (_| _> | | |  " VERSION "\n"
+        "Performant Hash-Cracker\n\n"
     );
 }
 
