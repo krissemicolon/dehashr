@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall
 
 compile: src/bruteforce.o src/threads.o src/hashing.o src/main.o
-	$(CC) src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS) -lgcrypt
+	$(CC) -DVERSION=1.0 src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS) -lgcrypt
 
 main.o: src/main.c
 	$(CC) $(CFLAGS) -c src/main.c
