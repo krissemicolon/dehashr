@@ -1,7 +1,9 @@
+.POSIX:
+
 CC=gcc
 CFLAGS=-Wall
 
-compile: src/bruteforce.o src/threads.o src/hashing.o src/main.o
+build: src/bruteforce.o src/threads.o src/hashing.o src/main.o
 	$(CC) -DVERSION=1.0 src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS) -lgcrypt
 
 main.o: src/main.c
@@ -25,3 +27,5 @@ install:
 
 uninstall:
 	rm -f /usr/local/bin/dehashr
+
+.PHONY: clean install uninstall
