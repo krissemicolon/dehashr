@@ -1,27 +1,21 @@
-CC=gcc
-CFLAGS=-Wall
+.POSIX:
 
-compile: src/bruteforce.o src/threads.o src/hashing.o src/main.o
-	$(CC) -DVERSION=1.0 src/bruteforce.o src/threads.o src/hashing.o src/main.o -o dehashr $(CFLAGS) -lgcrypt
+include config.mk
 
-main.o: src/main.c
-	$(CC) $(CFLAGS) -c src/main.c
+all: options dehashr
 
-threads.o: src/threads.c
-	$(CC) $(CFLAGS) -c src/threads.c
+options:
+	@echo Dehashr build options:
+	@echo "CFLAGS  = $(MYCFLAGS)"
+	@echo "LDFLAGS = $(MYLDFLAGS)"
+	@echo "CC      = $(CC)"
 
-hashing.o: src/hashing.c
-	$(CC) $(CFLAGS) -c src/hashing.c
-
-bruteforce.o: src/bruteforce.c
-	$(CC) $(CFLAGS) -c src/bruteforce.c
+dehashr:
+	$(MAKE) -C src CONFIG_MK="`pwd`/config.mk" INC="-I '`pwd`'" all
+	cp src/dehashr dehashr
 
 clean:
 	rm -f dehashr
-	rm src/*.o
+	$(MAKE) -C src CONFIG_MK="`pwd`/config.mk" INC="-I '`pwd`'" clean
 
-install:
-	mv dehashr /usr/local/bin
-
-uninstall:
-	rm -f /usr/local/bin/dehashr
+.PHONY: all options dehashr clean

@@ -92,9 +92,11 @@ int main(int argc, char **argv) {
         switch (options) {
             case 'h':
                 print_help();
+                /* NOTREACHED */
 
             case 'l':
                 print_algorithms();
+                /* NOTREACHED */
 
             case 'i':
                 inputHash = optarg;
