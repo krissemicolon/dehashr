@@ -15,6 +15,8 @@ meson compile
 ```
 ### Dependencies:
 - libgcrypt
+- meson
+- ninja
 
 #### Installation of libgcrypt:
 Gentoo: ```emerge libgcrypt```\
