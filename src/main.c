@@ -8,6 +8,7 @@
 #include "include/main.h"
 #include "include/cli.h"
 #include "include/hashing.h"
+#include "include/bruteforce.h"
 
 // User Input & settings
 char *inputHash;
@@ -51,12 +52,14 @@ int main(int argc, char **argv) {
                 threadAmount = atoi(optarg); 
                 printf("%i\n", threadAmount);
                 break;
-
-            default:
-                print_usage();
-                printf("dehashr -h for more information\n");
-                exit(2);
         }
     }
+
+    if(optind == 1) {
+        print_usage();
+        puts("dehashr -h for more information");
+        exit(2);
+    }
+
     return 0;
 }
