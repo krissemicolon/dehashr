@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="res/logo.svg" width="256"/>
+  <img src="res/logo.png" width="256"/>
   <h1>dehashr</h1>
 </p>
 
