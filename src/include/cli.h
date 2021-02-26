@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef CLI_H
+#define CLI_H
 
 void print_logo(void);
 void print_usage(void);

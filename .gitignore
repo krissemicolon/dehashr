@@ -1,3 +1,6 @@
 dehashr
 src/a.out
 src/*.o
+scratchpad.c
+test/
+build/
