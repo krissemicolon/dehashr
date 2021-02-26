@@ -10,6 +10,7 @@
 ### Building from source:
 ```
 meson setup build
+cd build
 meson compile
 ```
 ### Dependencies:
