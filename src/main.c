@@ -5,10 +5,10 @@
 #include <stdbool.h>
 #include <gcrypt.h>
 
-#include "include/main.h"
 #include "include/cli.h"
 #include "include/hashing.h"
 #include "include/bruteforce.h"
+#include "include/main.h"
 
 // User Input & settings
 char *inputHash;

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <gcrypt.h>
 
-#include "include/bruteforce.h"
 #include "include/hashing.h"
+#include "include/bruteforce.h"
 
 #define MAX_SIZE 30
 #define CHAR_COUNT 92
@@ -17,7 +17,7 @@ void bruteforce() {
     for(i = 1; i < MAX_SIZE; guessCount[i++] = -1);
     for(i = 1; i <= MAX_SIZE; guess[i++] = '\0');
 
-    while(1) {
+    for(;;) {
         i = 0;
         while(guessCount[i] == CHAR_COUNT) {
             guessCount[i] = 0;

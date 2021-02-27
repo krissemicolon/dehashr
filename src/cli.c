@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "include/cli.h"
 #include "include/main.h"
+#include "include/cli.h"
 
 char algorithms[][15] = {
     "MD4",
