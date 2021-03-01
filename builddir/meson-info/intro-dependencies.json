@@ -1,0 +1,1 @@
+[{"name": "libgcrypt", "version": "1.8.6", "compile_args": [], "link_args": ["-lgcrypt", "-lgpg-error"]}]

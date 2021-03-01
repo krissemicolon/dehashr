@@ -4,9 +4,8 @@
 
 #include "include/hashing.h"
 
-const char *hash(int algorithm, char *inputString) {
-    // Lenght of specified Algorithm
-    // TODO: FIX HARDCODED 256
+char *hash(char *input, int algorithm, int size) {
+    // Size of specified Algorithm
     unsigned char digest[256];
     static char outputHash[32+1] = {0,};
 
@@ -14,7 +13,7 @@ const char *hash(int algorithm, char *inputString) {
     int digest_length = gcry_md_get_algo_dlen(algorithm);
 
     // Hashing with selected algorithm
-    gcry_md_hash_buffer(algorithm, digest, inputString, strlen(inputString));
+    gcry_md_hash_buffer(algorithm, digest, input, strlen(input));
 
     for (int i=0; i < digest_length; i++) {
             sprintf(outputHash+(i*2), "%02x", digest[i]);

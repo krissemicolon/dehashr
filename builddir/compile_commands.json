@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "/home/krissemicolon/Projects/dehashr/builddir",
+    "command": "ccache cc -Idehashr.p -I. -I.. -I../src/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c99 -O3 -g -march=native -MD -MQ dehashr.p/src_main.c.o -MF dehashr.p/src_main.c.o.d -o dehashr.p/src_main.c.o -c ../src/main.c",
+    "file": "../src/main.c",
+    "output": "dehashr.p/src_main.c.o"
+  },
+  {
+    "directory": "/home/krissemicolon/Projects/dehashr/builddir",
+    "command": "ccache cc -Idehashr.p -I. -I.. -I../src/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c99 -O3 -g -march=native -MD -MQ dehashr.p/src_cli.c.o -MF dehashr.p/src_cli.c.o.d -o dehashr.p/src_cli.c.o -c ../src/cli.c",
+    "file": "../src/cli.c",
+    "output": "dehashr.p/src_cli.c.o"
+  },
+  {
+    "directory": "/home/krissemicolon/Projects/dehashr/builddir",
+    "command": "ccache cc -Idehashr.p -I. -I.. -I../src/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c99 -O3 -g -march=native -MD -MQ dehashr.p/src_hashing.c.o -MF dehashr.p/src_hashing.c.o.d -o dehashr.p/src_hashing.c.o -c ../src/hashing.c",
+    "file": "../src/hashing.c",
+    "output": "dehashr.p/src_hashing.c.o"
+  },
+  {
+    "directory": "/home/krissemicolon/Projects/dehashr/builddir",
+    "command": "ccache cc -Idehashr.p -I. -I.. -I../src/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -std=c99 -O3 -g -march=native -MD -MQ dehashr.p/src_bruteforce.c.o -MF dehashr.p/src_bruteforce.c.o.d -o dehashr.p/src_bruteforce.c.o -c ../src/bruteforce.c",
+    "file": "../src/bruteforce.c",
+    "output": "dehashr.p/src_bruteforce.c.o"
+  }
+]

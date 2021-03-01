@@ -13,5 +13,4 @@ void launchThreads() {
     for(int i = numberOfThreads(); i > 0; i--) {
         // THEADS LAUNCH
     }
-
 }

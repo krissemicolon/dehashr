@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <gcrypt.h>
+#include <ctype.h>
 
 #include "include/cli.h"
 #include "include/hashing.h"
@@ -28,7 +29,9 @@ int main(int argc, char **argv) {
                 print_algorithms();
 
             case 'i':
+                //inputHash = strlwr(optarg);
                 inputHash = optarg;
+                bruteforce(inputHash);
                 break;
 
             case 'a':
@@ -44,8 +47,7 @@ int main(int argc, char **argv) {
 
             case 'g':
                 //printf("Feature not available yet.\n");
-                //puts(hash(GCRY_MD_SHA256, optarg));
-                bruteforce();
+                puts(hash(optarg, GCRY_MD_SHA256, 256));
                 break;
 
             case 't':

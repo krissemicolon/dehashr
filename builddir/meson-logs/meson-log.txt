@@ -1,0 +1,120 @@
+Build started at 2021-03-01T01:40:42.434639
+Main binary: /usr/bin/python3.8
+Build Options: -Dbuildtype=debug
+Python system: Linux
+The Meson build system
+Version: 0.55.3
+Source dir: /home/krissemicolon/Projects/dehashr
+Build dir: /home/krissemicolon/Projects/dehashr/builddir
+Build type: native build
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+Project name: dehashr
+Project version: 1.0.0
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: ccache cc
+Is cross compiler: False.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity check compiler command line: ccache cc /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.c -o /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.exe
+C compiler for the build machine: ccache cc (gcc 9.3.0 "cc (Gentoo 9.3.0-r2 p4) 9.3.0")
+C linker for the build machine: cc ld.bfd 2.35.1
+None of 'AR' are defined in the environment, not changing global flags.
+None of 'CC' are defined in the environment, not changing global flags.
+None of 'CFLAGS' are defined in the environment, not changing global flags.
+None of 'LDFLAGS' are defined in the environment, not changing global flags.
+None of 'CPPFLAGS' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity testing C compiler: ccache cc
+Is cross compiler: False.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Sanity check compiler command line: ccache cc /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.c -o /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/krissemicolon/Projects/dehashr/builddir/meson-private/sanitycheckc.exe
+C compiler for the host machine: ccache cc (gcc 9.3.0 "cc (Gentoo 9.3.0-r2 p4) 9.3.0")
+C linker for the host machine: cc ld.bfd 2.35.1
+None of 'AR' are defined in the environment, not changing global flags.
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Target machine cpu family: x86_64
+Target machine cpu: x86_64
+Pkg-config binary for MachineChoice.HOST is not cached.
+None of 'PKG_CONFIG' are defined in the environment, not changing global flags.
+Pkg-config binary missing from cross or native file, or env var undefined.
+Trying a default Pkg-config fallback at pkg-config
+Found pkg-config: /usr/bin/pkg-config (1.6.3)
+Determining dependency 'libgcrypt' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion libgcrypt` -> 0
+1.8.6
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --cflags libgcrypt` -> 0
+
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libgcrypt --libs` -> 0
+-lgcrypt -lgpg-error
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config libgcrypt --libs` -> 0
+-lgcrypt -lgpg-error
+None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmp277ixr33
+Command line:  ccache cc /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmp277ixr33/testfile.c -o /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmp277ixr33/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lgcrypt -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+None of 'CC_LD' are defined in the environment, not changing global flags.
+Running compile:
+Working directory:  /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpnirsbnk6
+Command line:  ccache cc /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpnirsbnk6/testfile.c -o /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpnirsbnk6/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -Wl,--start-group -lgpg-error -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Run-time dependency libgcrypt found: YES 1.8.6
+Build targets in project: 1
+
+Option buildtype is: custom [default: release]
+Found ninja-1.10.1 at /usr/bin/ninja
+Running compile:
+Working directory:  /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpyeo8ith8
+Command line:  ccache cc /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpyeo8ith8/testfile.c -o /home/krissemicolon/Projects/dehashr/builddir/meson-private/tmpyeo8ith8/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 --print-search-dirs 
+
+Code:
+ 
+Compiler stdout:
+ install: /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/
+programs: =/usr/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/libexec/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/libexec/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/bin/
+libraries: =/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/lib/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib64/:/lib/x86_64-pc-linux-gnu/9.3.0/:/lib/../lib64/:/usr/lib/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+
+Compiler stderr:
+ 
+None of 'STRIP' are defined in the environment, not changing global flags.
+None of 'STRIP' are defined in the environment, not changing global flags.
