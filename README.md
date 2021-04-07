@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="res/logo.png" width="256"/>
-  <h1>dehashr</h1>
-</p>
-
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/krissemicolon/dehashr?style=plastic)
-![Lines of code](https://img.shields.io/tokei/lines/github/krissemicolon/dehashr?style=plastic)
-![GitHub](https://img.shields.io/github/license/krissemicolon/dehashr?style=plastic)
-![GitHub all releases](https://img.shields.io/github/downloads/krissemicolon/dehashr/total?style=plastic)
+<h1 align="center">dehashr</br>
+    <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/krissemicolon/dehashr?label=lines&style=flat-square&labelColor=ffffff&color=ffffff">
+    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/krissemicolon/dehashr?label=size&style=flat-square&labelColor=ffffff&color=ffffff">
+    <img alt="GitHub" src="https://img.shields.io/github/license/krissemicolon/dehashr?style=flat-square&labelColor=ffffff&color=ffffff">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/krissemicolon/dehashr?style=flat-square&labelColor=ffffff&color=ffffff">
+</h1> </br>
 
 ### Building from source:
 ```

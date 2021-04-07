@@ -22,38 +22,42 @@ int main(int argc, char **argv) {
     int options;
     while ((options = getopt(argc, argv, "hli:a:o:g:t:")) != -1) {
         switch (options) {
+
             case 'h':
                 print_help();
+            break;
 
             case 'l':
                 print_algorithms();
+            break;
 
             case 'i':
                 //inputHash = strlwr(optarg);
                 inputHash = optarg;
                 bruteforce(inputHash);
-                break;
+            break;
 
             case 'a':
                 algorithm = optarg;
                 printf("algorithm: %s\n", algorithm);
-                break;
+            break;
 
             case 'o':
                 outputFilename = optarg;
                 outputToFile = true;
                 printf("OutFilename: %s\n", outputFilename);
-                break;
+            break;
 
             case 'g':
                 //printf("Feature not available yet.\n");
                 puts(hash(optarg, GCRY_MD_SHA256, 256));
-                break;
+            break;
 
             case 't':
                 threadAmount = atoi(optarg); 
                 printf("%i\n", threadAmount);
-                break;
+            break;
+                
         }
     }
 

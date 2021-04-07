@@ -1,6 +1,8 @@
 dehashr
 src/a.out
 src/*.o
+src/*.txt
 scratchpad.c
 test/
 build/
+builddir/
