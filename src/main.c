@@ -1,3 +1,20 @@
+/* 
+ * This file is part of the dehash distribution (https://github.com/krissemicolon/dehashr).
+ * Copyright (c) 2021 Kris Huber.
+ * 
+ * This program is free software: you can redistribute it and/or modify  
+ * it under the terms of the GNU General Public License as published by  
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License 
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <getopt.h>
@@ -7,36 +24,47 @@
 #include <ctype.h>
 
 #include "cli.h"
+#include "threads.h"
 #include "hashing.h"
 #include "bruteforce.h"
 #include "main.h"
 
 // User Input & settings
-char *inputHash;
+char *input_hash;
 char *algorithm;
-char *outputFilename;
+char *output_filename;
 char *guess;
-bool outputToFile = false;
-int threadAmount;
+bool output_to_file = false;
+mode selected_mode = BRUTEFORCE;
+int thread_amount;
 
 int main(int argc, char **argv) {
     int options;
-    while ((options = getopt(argc, argv, "hli:a:o:g:t:")) != -1) {
+    while ((options = getopt(argc, argv, "hlbwi:a:o:g:t:")) != -1) {
         switch (options) {
             /* [-h] Prints Help */
             case 'h':
                 print_help();
                 break;
 
-            /* [-l] Lists hashing algos */
+            /* [-l] Lists hashing algorithms */
             case 'l':
                 print_algorithms();
                 break;
 
+            /* [-b] Select Bruteforce mode */            
+            case 'b':
+                selected_mode = BRUTEFORCE;
+                break;
+
+            /* [-w] Select Wordlist mode */ 
+            case 'w':
+                selected_mode = WORDLIST;
+                break
+
             /* [-i] Input the hash */
             case 'i':
                 input_hash = optarg;
-                bruteforce(inputHash);
                 break;
 
             /* [-a] Input the algorithm */
@@ -60,7 +88,11 @@ int main(int argc, char **argv) {
             /* [-t] Input the amount of threads you wish to use */
             case 't':
                 puts("Feature not available yet.");
-                thread_amount = atoi(optarg); 
+                if(optarg == NULL) {
+                    thread_amount = calc_thread_amount();
+                } else {
+                    thread_amount = atoi(optarg); 
+                }
                 break;
         }
     }
@@ -69,6 +101,15 @@ int main(int argc, char **argv) {
         print_usage();
         puts("dehashr -h for more information");
         exit(2);
+    }
+
+    switch(selected_mode) {
+        BRUTEFORCE:
+            break;
+        
+        WORDLIST:
+            puts("Mode not available yet.");
+            break;
     }
 
     return 0;

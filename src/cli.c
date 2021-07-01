@@ -4,7 +4,7 @@
 #include "main.h"
 #include "cli.h"
 
-char algorithms[][15] = {
+const char algorithms[][15] = {
     "MD4",
     "MD5",
     "RIPEMD-160",
@@ -45,7 +45,7 @@ void print_logo() {
 }
 
 void print_usage() {
-    printf("Usage: dehashr -i <inputHash> -t <algorithm> \n");
+    printf("Usage: dehashr -i <hash> -t <algorithm> \n");
 }
 
 void print_help() {
@@ -55,14 +55,16 @@ void print_help() {
 
     printf(
         "Options:\n"
-        "-h              Print the help page\n"
-        "-l              list all available inputHashing algorithms\n" 
-        "-i <inputHash>  inputHash\n"
-        "-a <algorithm>  hash algorithm\n"
+        "-h              Prints this help page\n"
+        "-l              Lists hashing algorithms\n" 
+        "-b              Select Bruteforce mode\n"
+        "-w              Select Wordlist mode\n"
+        "-i <hash>       Input the hash\n"
+        "-a <algorithm>  Input the algorithm\n"
         "-o <filename>   [Optional] Enable saving result in file.\n"
         "                (Filename needs to be specified)\n"
-        "-g <guess>      guess the result\n"
-        "-t <amount>     [Optional] Specify amount of threads. \n"
+        "-g <guess>      Guess the hash\n"
+        "-t <threads>    [Optional] Specify amount of threads.\n"
         "                Default: Calculates most efficient amount\n"
         );
 

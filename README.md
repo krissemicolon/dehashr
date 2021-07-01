@@ -15,6 +15,7 @@ meson compile
 - libgcrypt
 - meson
 - ninja
+- pthread
 
 #### Installation of libgcrypt:
 Gentoo: ```emerge libgcrypt```\

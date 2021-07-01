@@ -17,6 +17,7 @@ inc = include_directories('include')
 
 # Dependencies
 gcrypt = dependency('libgcrypt')
+thread = dependency('threads')
 
 executable( 
     'dehashr',
@@ -26,7 +27,7 @@ executable(
     'src/hashing.c',
     'src/bruteforce.c',
     # 'src/threads.c',
-    dependencies : gcrypt,
+    dependencies : [gcrypt, thead],
     c_args: cflags,
     include_directories : inc
 )

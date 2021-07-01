@@ -13,7 +13,7 @@ void bruteforce(char *hashinput) {
     const char characters[CHAR_COUNT+1] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1203495687.!-@*_$#/,+%&?;=~^)[\\]`(:<'>|\"";
     int i;
 	int j;
-    int guessCount[MAX_SIZE] = {0};
+    register int guessCount[MAX_SIZE] = {0};
     static char guess[MAX_SIZE+1];
 
     for(i = 1; i < MAX_SIZE; guessCount[i++] = -1);
@@ -39,7 +39,7 @@ void bruteforce(char *hashinput) {
         strcpy(ggus, guess);
 
         strcpy(hgus, hash(ggus, GCRY_MD_SHA256, 256));
-        int val = memcmp(hgus, inputHash, 5 * sizeof(char));
+        int val = memcmp(hgus, hashinput, 5 * sizeof(char));
         //int val = 1; 
 
         if (val == 0) {
