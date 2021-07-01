@@ -13,7 +13,7 @@ project(
 )
 
 cflags = '-march=native'
-inc = include_directories('src/include')
+inc = include_directories('include')
 
 # Dependencies
 gcrypt = dependency('libgcrypt')

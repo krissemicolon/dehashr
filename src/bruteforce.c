@@ -2,9 +2,9 @@
 #include <string.h>
 #include <gcrypt.h>
 
-#include "include/main.h"
-#include "include/hashing.h"
-#include "include/bruteforce.h"
+#include "main.h"
+#include "hashing.h"
+#include "bruteforce.h"
 
 #define MAX_SIZE 30
 #define CHAR_COUNT 92

@@ -6,15 +6,16 @@
 #include <gcrypt.h>
 #include <ctype.h>
 
-#include "include/cli.h"
-#include "include/hashing.h"
-#include "include/bruteforce.h"
-#include "include/main.h"
+#include "cli.h"
+#include "hashing.h"
+#include "bruteforce.h"
+#include "main.h"
 
 // User Input & settings
 char *inputHash;
 char *algorithm;
 char *outputFilename;
+char *guess;
 bool outputToFile = false;
 int threadAmount;
 
@@ -22,42 +23,45 @@ int main(int argc, char **argv) {
     int options;
     while ((options = getopt(argc, argv, "hli:a:o:g:t:")) != -1) {
         switch (options) {
-
+            /* [-h] Prints Help */
             case 'h':
                 print_help();
-            break;
+                break;
 
+            /* [-l] Lists hashing algos */
             case 'l':
                 print_algorithms();
-            break;
+                break;
 
+            /* [-i] Input the hash */
             case 'i':
-                //inputHash = strlwr(optarg);
-                inputHash = optarg;
+                input_hash = optarg;
                 bruteforce(inputHash);
-            break;
+                break;
 
+            /* [-a] Input the algorithm */
             case 'a':
                 algorithm = optarg;
                 printf("algorithm: %s\n", algorithm);
-            break;
+                break;
 
+            /* [-o] Enable output to File and choose filename */
             case 'o':
-                outputFilename = optarg;
-                outputToFile = true;
-                printf("OutFilename: %s\n", outputFilename);
-            break;
+                output_filename = optarg;
+                output_to_file = true;
+                break;
 
+            /* [-g] Guess the hash */
             case 'g':
-                //printf("Feature not available yet.\n");
-                puts(hash(optarg, GCRY_MD_SHA256, 256));
-            break;
+                puts("Feature not available yet.");
+                guess = optarg;
+                break;
 
+            /* [-t] Input the amount of threads you wish to use */
             case 't':
-                threadAmount = atoi(optarg); 
-                printf("%i\n", threadAmount);
-            break;
-                
+                puts("Feature not available yet.");
+                thread_amount = atoi(optarg); 
+                break;
         }
     }
 

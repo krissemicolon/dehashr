@@ -2,7 +2,7 @@
 #include <string.h>
 #include <gcrypt.h>
 
-#include "include/hashing.h"
+#include "hashing.h"
 
 char *hash(char *input, int algorithm, int size) {
     // Size of specified Algorithm

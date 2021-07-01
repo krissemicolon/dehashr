@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <sys/stat.h>
 
-#include "include/file.h"
+#include "file.h"
+
+/*
 
 int filesize(char *filename) {
     struct stat st;
@@ -33,3 +35,4 @@ int main() {
    printf("Total number of lines are: %d\n", linesCount);
    return 0;
 }
+*/
