@@ -17,7 +17,7 @@ inc = include_directories('include')
 
 # Dependencies
 gcrypt = dependency('libgcrypt')
-thread = dependency('threads')
+thread = dependency('pthreads')
 
 executable( 
     'dehashr',

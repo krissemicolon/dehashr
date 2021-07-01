@@ -17,6 +17,10 @@ meson compile
 - ninja
 - pthread
 
+### Planned
+- [ ] Multithreading support
+- [ ] Wordlist Mode
+
 #### Installation of libgcrypt:
 Gentoo: ```emerge libgcrypt```\
 Void: ```xbps-install libgcrypt```\

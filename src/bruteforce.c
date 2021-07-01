@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <bool.h>
 #include <string.h>
 #include <gcrypt.h>
 
@@ -7,10 +8,11 @@
 #include "bruteforce.h"
 
 #define MAX_SIZE 30
-#define CHAR_COUNT 92
+#define CHAR_COUNT 94
 
-void bruteforce(char *hashinput) {
-    const char characters[CHAR_COUNT+1] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1203495687.!-@*_$#/,+%&?;=~^)[\\]`(:<'>|\"";
+void bruteforce(char *hash_str) {
+    const char characters[CHAR_COUNT + 1] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1203495687.!-@*_$#/,+%&?;=~^)[\\]`(:<'>|\"";
+    bool cracked = false;
     int i;
 	int j;
     register int guessCount[MAX_SIZE] = {0};
@@ -19,7 +21,7 @@ void bruteforce(char *hashinput) {
     for(i = 1; i < MAX_SIZE; guessCount[i++] = -1);
     for(i = 1; i <= MAX_SIZE; guess[i++] = '\0');
 
-    for(;;) {
+    while(!cracked) {
         i = 0;
         while(guessCount[i] == CHAR_COUNT) {
             guessCount[i] = 0;
@@ -32,16 +34,6 @@ void bruteforce(char *hashinput) {
 			}
         }
         
-        char gus[256];
-        char ggus[256];
-        char hgus[256];
-        strcpy(gus, guess);
-        strcpy(ggus, guess);
-
-        strcpy(hgus, hash(ggus, GCRY_MD_SHA256, 256));
-        int val = memcmp(hgus, hashinput, 5 * sizeof(char));
-        //int val = 1; 
-
         if (val == 0) {
             printf("Result: %s\n", gus);
             exit(0);
@@ -54,3 +46,5 @@ void bruteforce(char *hashinput) {
     
 
 }
+
+void threaded_bruteforce(int thread_amount, char *hash_str) {}

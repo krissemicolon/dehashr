@@ -4,7 +4,7 @@
 
 #include "hashing.h"
 
-char *hash(char *input, int algorithm, int size) {
+char *hash(const char *input, int algorithm, int size) {
     // Size of specified Algorithm
     unsigned char digest[256];
     static char outputHash[32+1] = {0,};

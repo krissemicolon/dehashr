@@ -1,5 +1,5 @@
 /* 
- * This file is part of the dehash distribution (https://github.com/krissemicolon/dehashr).
+ * This file is part of the dehashr distribution (https://github.com/krissemicolon/dehashr).
  * Copyright (c) 2021 Kris Huber.
  * 
  * This program is free software: you can redistribute it and/or modify  
@@ -29,20 +29,27 @@
 #include "bruteforce.h"
 #include "main.h"
 
-// User Input & settings
-char *input_hash;
-char *algorithm;
-char *output_filename;
-char *guess;
-bool output_to_file = false;
-mode selected_mode = BRUTEFORCE;
-int thread_amount;
+typedef struct {
+    char *input_hash;
+    char *algorithm;
+    char *output_filename;
+    char *guess;
+    bool output_to_file;
+    mode selected_mode;
+    int thread_amount;
+} settings;
 
 int main(int argc, char **argv) {
+    // Init settings struct with default values
+    settings stg = {
+        .output_to_file = false,
+        .selected_mode = BRUTEFORCE,
+    };
+
     int options;
     while ((options = getopt(argc, argv, "hlbwi:a:o:g:t:")) != -1) {
         switch (options) {
-            /* [-h] Prints Help */
+            /* [-h] Prints Help Page */
             case 'h':
                 print_help();
                 break;
@@ -54,44 +61,44 @@ int main(int argc, char **argv) {
 
             /* [-b] Select Bruteforce mode */            
             case 'b':
-                selected_mode = BRUTEFORCE;
+                stg.selected_mode = BRUTEFORCE;
                 break;
 
             /* [-w] Select Wordlist mode */ 
             case 'w':
-                selected_mode = WORDLIST;
+                stg.selected_mode = WORDLIST;
                 break
 
             /* [-i] Input the hash */
             case 'i':
-                input_hash = optarg;
+                stg.input_hash = optarg;
                 break;
 
             /* [-a] Input the algorithm */
             case 'a':
-                algorithm = optarg;
+                stg.algorithm = optarg;
                 printf("algorithm: %s\n", algorithm);
                 break;
 
             /* [-o] Enable output to File and choose filename */
             case 'o':
-                output_filename = optarg;
-                output_to_file = true;
+                stg.output_filename = optarg;
+                stg.output_to_file = true;
                 break;
 
             /* [-g] Guess the hash */
             case 'g':
                 puts("Feature not available yet.");
-                guess = optarg;
+                stg.guess = optarg;
                 break;
 
             /* [-t] Input the amount of threads you wish to use */
             case 't':
                 puts("Feature not available yet.");
                 if(optarg == NULL) {
-                    thread_amount = calc_thread_amount();
+                    stg.thread_amount = calc_thread_amount();
                 } else {
-                    thread_amount = atoi(optarg); 
+                    srg.thread_amount = atoi(optarg); 
                 }
                 break;
         }
@@ -100,10 +107,10 @@ int main(int argc, char **argv) {
     if(optind == 1) {
         print_usage();
         puts("dehashr -h for more information");
-        exit(2);
+        exit(1);
     }
 
-    switch(selected_mode) {
+    switch(stg.selected_mode) {
         BRUTEFORCE:
             break;
         
